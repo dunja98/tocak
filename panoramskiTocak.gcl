@@ -1,0 +1,163 @@
+dim 150 100
+background 160 207 235
+
+point A 75 60
+point B 70 3
+
+
+point C  80 3
+
+point D1 75 95 
+
+
+
+
+color 50 50 50
+
+drawcircle A D1
+
+color 25 25 50
+filltriangle A B C
+
+
+
+color 147 112 219
+point X 0 0 360 0
+getx x X
+getx r1 A
+gety r2 A
+
+distance r A D1
+expression xx {r*cos(x)+r1}
+expression yy {r*sin(x)+r2}
+point P xx yy
+cmark P
+
+
+procedure kabina {P} {
+
+
+point X 0 0  180 0
+getx x X
+
+getx r1 P
+gety r2 P
+expression y {r2-4}
+point L r1 y
+
+getx r1 L
+gety r2 L
+
+
+
+expression xx {5*cos(x)+r1}
+expression yy {5*sin(x)+r2}
+
+point L1 xx yy
+
+
+
+color 255 0 0
+drawsegment L P
+
+
+color 204 49 104
+drawcircle L1 L
+fillcircle L1 L
+
+color 22 22 222 
+
+
+cmark L
+
+
+
+}
+
+
+
+rotate P1 A 30 P
+cmark P1
+
+
+
+rotate P2 A 30 P1
+cmark P2
+
+
+rotate P3 A 30 P2
+cmark P3
+
+
+rotate P4 A 30 P3
+cmark P4
+
+rotate P5 A 30 P4
+cmark P5
+
+
+rotate P6 A 30 P5
+cmark P6
+
+
+rotate P7 A 30 P6
+cmark P7
+
+
+
+rotate P8 A 30 P7
+cmark P8
+
+rotate P9 A 30 P8
+cmark P9
+
+
+rotate P10 A 30 P9
+cmark P10
+
+
+
+rotate P11 A 30 P10
+cmark P11
+
+
+
+
+drawsegment P A
+drawsegment P1 A
+drawsegment P2 A
+drawsegment P3 A
+drawsegment P4  A
+drawsegment P5 A
+drawsegment P6 A
+
+drawsegment P7 A
+drawsegment P8 A
+drawsegment P9 A
+drawsegment P10 A
+drawsegment P11 A
+
+call kabina {P }
+call kabina {P1 }
+call kabina {P2 }
+call kabina {P3 }
+call kabina {P4 }
+call kabina {P5}
+call kabina {P6 }
+call kabina {P7}
+call kabina {P8 }
+call kabina {P9 }
+call kabina {P10 }
+call kabina {P11 }
+
+
+
+animation_frames 30 1
+
+
+
+
+
+
+
+
